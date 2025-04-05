@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | MediCare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3B82F6',
+                            dark: '#1E40AF',
+                        },
+                    },
+                    transitionProperty: {
+                        'sidebar': 'background-color, transform',
+                    },
+                },
+            },
+        }
+    </script>
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+        .sidebar-item:hover {
+            background-color: #f3f4f6;
+            transform: translateX(2px);
+        }
+        .dark .sidebar-item:hover {
+            background-color: #4b5563;
+        }
+        .active-item {
+            background-color: #3b82f6;
+            color: white;
+            border-left: 4px solid #1d4ed8;
+        }
+        .section-divider {
+            border-bottom: 1px solid #e5e7eb;
+            margin: 1.5rem 0;
+        }
+        .dark .section-divider {
+            border-color: #374151;
+        }
+        
+        /* Dark mode overrides */
+        .dark {
+            background-color: #111827;
+        }
+        .dark .bg-white {
+            background-color: #1f2937;
+        }
+        .dark .bg-gray-100 {
+            background-color: #111827;
+        }
+        .dark .text-gray-800 {
+            color: #f3f4f6;
+        }
+        .dark .text-gray-600 {
+            color: #d1d5db;
+        }
+        .dark .border-gray-200 {
+            border-color: #374151;
+        }
+        .dark .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+        .dark .bg-blue-100 {
+            background-color: #1e3a8a;
+        }
+        .dark .text-blue-600 {
+            color: #93c5fd;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 transition-colors duration-200 dark:bg-gray-900">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-md dark:bg-gray-800 flex flex-col">
+            <div class="p-4 flex items-center border-b dark:border-gray-700">
+                <img src="https://storage.googleapis.com/a1aa/image/wAM6XrIhh5gElMPNFytM9MxZ7xEBClEH5ChHa4QHIiA.jpg" 
+                     alt="Logo" class="w-8 h-8 mr-2" width="32" height="32" />
+                <span class="text-xl font-semibold text-gray-800 dark:text-white">MediCare</span>
+            </div>
+
+            <nav class="flex-1 overflow-y-auto py-4">
+                                                         
+                    <a href="dashboard.html" class="active-item flex items-center p-3 rounded-lg mx-2">
+                        <i class="fas fa-chart-line w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Dashboard</span>
+                    </a>
+                    <a href="ai-care.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-robot w-5 mr-3 text-center"></i>
+                        <span class="font-medium">AI-CARE</span>
+                    </a>
+                    <a href="categories.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-th-large w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Categories</span>
+                    </a>
+                    <a href="hospital.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-hospital w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Hospitals</span>
+                    </a>
+                    <a href="healthy status.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-heartbeat w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Health Status</span>
+                    </a>
+                    <a href="pharmacy.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-pills w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Pharmacy</span>
+                    </a>
+                    <a href="payments.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-credit-card w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Payments</span>
+                    </a>
+                    <a href="emergency.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-ambulance w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Emergency</span>
+                    </a>
+                    <a href="medicare iq test.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-brain w-5 mr-3 text-center"></i>
+                        <span class="font-medium">MediCare IQ Test</span>
+                    </a>
+                    <a href="physcial fitness.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-running w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Physical Fitness</span>
+                    </a>
+                    <a href="devices.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-mobile-alt w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Devices</span>
+                    </a>
+                    <a href="terms & condition.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-file-contract w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Terms & Conditions</span>
+                    </a>
+                    <a href="legal.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-balance-scale w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Legal</span>
+                    </a>
+                    <a href="setting.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg mx-2 dark:text-gray-300">
+                        <i class="fas fa-cog w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Settings</span>
+                    </a>    
+                </div>
+                
+                <div class="mt-auto px-4 py-2 border-t dark:border-gray-700">
+                    <a href="logout.html" class="sidebar-item flex items-center p-3 text-gray-600 rounded-lg dark:text-gray-300">
+                        <i class="fas fa-sign-out-alt w-5 mr-3 text-center"></i>
+                        <span class="font-medium">Logout</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 overflow-y-auto">
+            <div class="p-6">
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                    <div class="mb-4 md:mb-0">
+                        <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">Dashboard</h1>
+                        <p class="text-gray-600 dark:text-gray-300">Welcome back, Louis</p>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 w-full md:w-auto">
+                        <div class="relative flex-1 md:w-64">
+                            <input
+                                type="text"
+                                placeholder="Search dashboard..."
+                                class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            />
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                        <!-- Theme Toggle -->
+                        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2">
+                            <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="relative">
+                            <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <i class="fas fa-bell text-gray-600 dark:text-gray-300"></i>
+                                <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+                            </button>
+                        </div>
+                        <div class="flex items-center">
+                            <img
+                                src="https://storage.googleapis.com/a1aa/image/L-lJVDa7y1tKayo14iuotNTh6vPT7O6DpigdVyQprOY.jpg"
+                                alt="User Avatar"
+                                class="w-10 h-10 rounded-full mr-2"
+                                width="40"
+                                height="40"
+                            />
+                            <div>
+                                <p class="font-semibold text-sm dark:text-white">Louis Ssenoga</p>
+                                <p class="text-gray-600 text-xs dark:text-gray-300">Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="bg-white dark:bg-gray-800 border-t dark:border-gray-700 p-4">
+                    <div class="max-w-7xl mx-auto">
+                        <p class="text-center text-gray-600 dark:text-gray-300 text-sm">
+                            �� 2023 MediCare. All rights reserved.
+                        </p>
+                    </div>
+                </footer>
+                <!-- Dashboard Content -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-2">
+                            <button class="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg font-medium dark:bg-blue-900 dark:text-blue-200">
+                                All
+                            </button>
+                            <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg font-medium dark:bg-gray-700 dark:text-gray-300">
+                                Started
+                            </button>
+                            <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg font-medium dark:bg-gray-700 dark:text-gray-300">
+                                Approval
+                            </button>
+                            <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg font-medium dark:bg-gray-700 dark:text-gray-300">
+                                Completed
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="p-2 rounded-lg bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="p-2 rounded-lg bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Card Template -->
+                        <div class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h2 class="text-lg font-semibold dark:text-white">Body Well-being</h2>
+                                    <p class="text-gray-600 dark:text-gray-300">Check Up</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">1 Week Left</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img
+                                        src="https://storage.googleapis.com/a1aa/image/Oc7SN9yspFtQxJSIP5Nr5rmikqJ4Do7OhVZ9cqPdfDM.jpg"
+                                        alt="Team Member 1"
+                                        class="w-6 h-6 rounded-full"
+                                    />
+                                    <img
+                                        src="https://storage.googleapis.com/a1aa/image/gl2VbN6MyH92CC-jha9DFKY7hgYGILmuZKRvPR3c414.jpg"
+                                        alt="Team Member 2"
+                                        class="w-6 h-6 rounded-full -ml-2"
+                                    />
+                                    <img
+                                        src="https://storage.googleapis.com/a1aa/image/fFyEbT19tHMXG2JTrp4wBpQnUAN6QDFbr1c2mwcGYm0.jpg"
+                                        alt="Team Member 3"
+                                        class="w-6 h-6 rounded-full -ml-2"
+                                    />
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-600 dark:text-gray-300 mr-2">34%</span>
+                                    <div class="w-16 bg-gray-200 rounded-full h-2 dark:bg-gray-600">
+                                        <div class="bg-blue-500 h-2 rounded-full" style="width: 34%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Repeat cards with different content -->
+                        <div class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h2 class="text-lg font-semibold dark:text-white">Cognitive Test</h2>
+                                    <p class="text-gray-600 dark:text-gray-300">IQ Assessment</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">3 Days Left</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img
+                                        src="https://storage.googleapis.com/a1aa/image/Oc7SN9yspFtQxJSIP5Nr5rmikqJ4Do7OhVZ9cqPdfDM.jpg"
+                                        alt="Team Member 1"
+                                        class="w-6 h-6 rounded-full"
+                                    />
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-600 dark:text-gray-300 mr-2">72%</span>
+                                    <div class="w-16 bg-gray-200 rounded-full h-2 dark:bg-gray-600">
+                                        <div class="bg-blue-500 h-2 rounded-full" style="width: 72%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h2 class="text-lg font-semibold dark:text-white">Fitness Program</h2>
+                                    <p class="text-gray-600 dark:text-gray-300">Weekly Plan</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Ongoing</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img
+                                        src="https://storage.googleapis.com/a1aa/image/gl2VbN6MyH92CC-jha9DFKY7hgYGILmuZKRvPR3c414.jpg"
+                                        alt="Team Member 2"
+                                        class="w-6 h-6 rounded-full"
+         
